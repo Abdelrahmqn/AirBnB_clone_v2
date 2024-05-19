@@ -18,7 +18,7 @@ def its_hbnb():
 
 @app.route('/c/<element>', strict_slashes=False)
 def print_text(element):
-    return f"C {element}"
+    return f"C %s" % element
 
 
 @app.route('/python/', strict_slashes=False)
@@ -29,7 +29,7 @@ def print_cool():
 @app.route('/python/<input>', strict_slashes=False)
 def print_argument(input):
     formatted = input.replace("_", " ")
-    return f"Python {formatted}"
+    return f"Python %s" % formatted
 
 
 if __name__ == '__main__':

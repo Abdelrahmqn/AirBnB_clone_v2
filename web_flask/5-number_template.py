@@ -2,7 +2,7 @@
 """ Flask Documentation file """
 
 
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -35,6 +35,11 @@ def print_argument(input):
 @app.route('/number/<int:number>', strict_slashes=False)
 def number_n(number):
     return "%i is a number" % number
+
+
+@app.route('/number_template/<int:numb>', strict_slashes=False)
+def number_template(numb):
+    return render_template('5-number.html', numb=numb)
 
 
 if __name__ == '__main__':

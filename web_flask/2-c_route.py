@@ -18,7 +18,7 @@ def its_hbnb():
 
 @app.route('/c/<element>', strict_slashes=False)
 def print_text(element):
-    return f"C {element}"
+    return f"C %s" % element
 
 
 if __name__ == '__main__':
