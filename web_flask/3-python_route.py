@@ -21,5 +21,16 @@ def print_text(element):
     return f"C {element}"
 
 
+@app.route('/python/', strict_slashes=False)
+def print_cool():
+    return "Python is cool"
+
+
+@app.route('/python/<input>', strict_slashes=False)
+def print_argument(input):
+    formatted = input.replace("_", " ")
+    return f"Python {formatted}"
+
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True, host="0.0.0.0")
